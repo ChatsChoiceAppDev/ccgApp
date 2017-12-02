@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace CCG
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class PartnerPage : ContentPage
-	{
-		public PartnerPage ()
-		{
-			InitializeComponent ();
-		}
-	}
+  [XamlCompilation(XamlCompilationOptions.Compile)]
+  public partial class PartnerPage : ContentPage
+  {
+    public PartnerPage()
+    {
+      InitializeComponent();
+    }
+  }
 }

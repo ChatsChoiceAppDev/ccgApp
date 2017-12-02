@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace CCG
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TwitchPage : ContentPage
-	{
-		public TwitchPage ()
-		{
-			InitializeComponent ();
-		}
-	}
+  [XamlCompilation(XamlCompilationOptions.Compile)]
+  public partial class TwitchPage : ContentPage
+  {
+    public TwitchPage()
+    {
+      InitializeComponent();
+    }
+  }
 }
