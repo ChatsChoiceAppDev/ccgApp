@@ -21,7 +21,8 @@ namespace CCG
 
     private void Button_Clicked(object sender, EventArgs e)
     {
-  
+      WebView webView = new WebView
+      { Source =  TwitchWrapper.Instance.LoginUri("http://localhost") };
     }
   }
 }
