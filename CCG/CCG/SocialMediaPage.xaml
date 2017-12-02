@@ -18,7 +18,7 @@
                 Image="instagram.png" 
                 Text="Instagram" 
                 TextColor="White"
-                Clicked="New_Funciton"/>
+                Clicked="Button_Clicked"/>
         
     </StackLayout>
 </ContentPage>
