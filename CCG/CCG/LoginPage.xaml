@@ -7,7 +7,7 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
-            <Image Source="{EmbeddedImage Source=CCG.Images.charmy.png}" x:Name="image" Aspect="AspectFill" />
+            <Image x:Name="image" Aspect="AspectFill"/>
 
             <Button HorizontalOptions="Center" 
                     VerticalOptions="Center" 
