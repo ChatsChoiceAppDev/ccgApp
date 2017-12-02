@@ -23,7 +23,7 @@ namespace CCG
       }
     }
 
-    public string LoginUri(string redirectUri,
+    public string GetLoginUri(string redirectUri,
       string responseType = "code", string scope = "user_read")
     {
       string uri = "https://api.twitch.tv/" + 
