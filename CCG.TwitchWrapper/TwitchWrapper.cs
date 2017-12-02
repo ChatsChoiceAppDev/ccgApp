@@ -34,7 +34,7 @@ namespace CCG.TwitchWrapper
       client.BaseAddress = uri;
       client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
-      string requestUri = $"kraken//oauth2//authorize?response_type={responseType}&client_id={m_clientID}&redirect_uri={redirectUri}&scope={scope}";
+      string requestUri = $"kraken/oauth2/authorize?response_type={responseType}&client_id={m_clientID}&redirect_uri={redirectUri}&scope={scope}";
       var response = client.GetAsync(requestUri).Result;
       //"?response_type=code&client_id=8bmp6j83z5w4mepq0dn0q1a7g186azi&redirect_uri=https%3A%2F%2Fstreamlabs.com%2Fauth&scope=user_read+channel_subscriptions+user_subscriptions+chat_login";
       string responseString = response.Content.ReadAsStringAsync().Result;

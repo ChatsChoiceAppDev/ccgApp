@@ -17,10 +17,9 @@ namespace CCG
       InitializeComponent();
     }
 
-    private void Button_Clicked(object sender, EventArgs e)
+    private async void Button_Clicked(object sender, EventArgs e)
     {
-      WebView webView = new WebView
-      { Source =  TwitchWrapper.Instance.LoginUri("http://localhost") };
+      await Navigation.PushAsync(new TwitchAuth());
     }
   }
 }

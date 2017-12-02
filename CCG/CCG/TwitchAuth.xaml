@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CCG.TwitchAuth">
+    <ContentPage.Content>
+        <StackLayout>
+            <WebView x:Name="Browser" WidthRequest="1000" HeightRequest="1000" Source="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=j2ov9wff57ogplmzfdobg2r6ne29br&redirect_uri=http://localhost&scope=user_read"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
