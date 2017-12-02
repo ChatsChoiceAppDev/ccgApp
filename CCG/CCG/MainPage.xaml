@@ -5,6 +5,7 @@
              xmlns:local="clr-namespace:CCG"
              x:Class="CCG.MainPage">
 
+
     <local:TwitchPage Icon="twitch.png" BackgroundColor="#199da2" />
 
     <local:VotePage Icon="check.png" BackgroundColor="#199da2" />

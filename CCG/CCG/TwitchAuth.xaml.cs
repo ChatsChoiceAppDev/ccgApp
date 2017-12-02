@@ -31,7 +31,7 @@ namespace CCG
         var values = HttpUtility.ParseQueryString(fragment);
         string accessToken = values["access_token"];
 
-        GetUserInfo(accessToken);
+        //GetUserInfo(accessToken);
 
         //Cancel navigation
         e.Cancel = true;
@@ -43,7 +43,7 @@ namespace CCG
         }
 
         //Go to MainPage
-        Navigation.PushModalAsync(new MainPage());
+        Navigation.PushModalAsync(new NavigationPage(new MainPage()));
       }
     }
 
