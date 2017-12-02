@@ -7,12 +7,12 @@ using Xamarin.Forms;
 
 namespace CCG
 {
-    public partial class MainPage : TabbedPage
+  public partial class MainPage : TabbedPage
+  {
+    public MainPage()
     {
-        public MainPage()
-        {
-            InitializeComponent();
+      InitializeComponent();
 
-        }
     }
+  }
 }

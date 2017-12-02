@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace CCG
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class VotePage : ContentPage
-	{
-		public VotePage ()
-		{
-			InitializeComponent ();
-		}
-	}
+  [XamlCompilation(XamlCompilationOptions.Compile)]
+  public partial class VotePage : ContentPage
+  {
+    public VotePage()
+    {
+      InitializeComponent();
+    }
+  }
 }
