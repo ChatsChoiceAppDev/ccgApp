@@ -15,7 +15,7 @@ namespace CCG
     public TwitchAuth()
     {
       InitializeComponent();
-      Browser.Source = TwitchWrapper.Instance.LoginUri("http://localhost");
+      Browser.Source = TwitchWrapper.Instance.LoginUri("http://localhost:11011");
     }
   }
 }
