@@ -12,9 +12,9 @@
       <Button HorizontalOptions="Center"
               VerticalOptions="Center"
               BackgroundColor="DarkCyan" 
-              Image="twitch.png"
-              Text="   Twitch Login" 
-              FontSize="Medium"
+              Image="twitchtwo.png"
+              Text="  Login using Twitch!" 
+              FontSize="14"
               TextColor="White"
               Clicked="Button_Clicked"/>
 
