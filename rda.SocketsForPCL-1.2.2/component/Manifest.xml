@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="rda.SocketsForPCL" is-shell="true">
+  <name>Sockets Plugin</name>
+  <publisher>Ryan Davis</publisher>
+  <publisher-url>http://www.twitter.com/rdavis_au</publisher-url>
+  <src-url>https://github.com/rdavisau/sockets-for-pcl</src-url>
+  <version>1.2.2</version>
+  <summary>Cross-platform TCP and UDP socket API for Xamarin iOS/Android/Forms, Xamarin.Mac/MonoMac, Windows Phone 8/8.1, Windows Store and Windows Desktop.</summary>
+  <packages>
+    <package id="rda.SocketsForPCL" version="1.2.2" framework="android" />
+    <package id="rda.SocketsForPCL" version="1.2.2" framework="winphone-8.1" />
+    <package id="rda.SocketsForPCL" version="1.2.2" framework="mobile" />
+    <package id="rda.SocketsForPCL" version="1.2.2" framework="mac-unified" />
+    <package id="rda.SocketsForPCL" version="1.2.2" framework="ios-unified" />
+    <package id="rda.SocketsForPCL" version="1.2.2" framework="winphone-8.0" />
+    <package id="rda.SocketsForPCL" version="1.2.2" framework="ios" />
+  </packages>
+  <samples>
+    <sample id="SocketsSample.XF">
+      <name>Cross-Platform Sockets Sample</name>
+      <summary>Cross-Platform Sockets Sample</summary>
+    </sample>
+  </samples>
+</component>
