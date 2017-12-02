@@ -58,6 +58,7 @@
     <Compile Include="TwitchPage.xaml.cs">
       <DependentUpon>TwitchPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TwitchWrapper.cs" />
     <Compile Include="VotePage.xaml.cs">
       <DependentUpon>VotePage.xaml</DependentUpon>
     </Compile>
