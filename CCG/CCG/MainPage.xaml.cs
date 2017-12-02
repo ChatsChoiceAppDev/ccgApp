@@ -12,7 +12,6 @@ namespace CCG
     public MainPage()
     {
       InitializeComponent();
-
     }
   }
 }

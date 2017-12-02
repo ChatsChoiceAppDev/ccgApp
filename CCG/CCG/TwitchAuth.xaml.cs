@@ -10,18 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace CCG
 {
   [XamlCompilation(XamlCompilationOptions.Compile)]
-  public partial class LoginPage : ContentPage
+  public partial class TwitchAuth : ContentPage
   {
-    public LoginPage()
+    public TwitchAuth()
     {
       InitializeComponent();
-
-      image.Source = ImageSource.FromResource("CCG/Images/charmy.png");
-    }
-
-    private async void Button_Clicked(object sender, EventArgs e)
-    {
-      await Navigation.PushAsync(new TwitchAuth());
     }
   }
 }
