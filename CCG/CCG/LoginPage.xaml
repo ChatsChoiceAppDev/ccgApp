@@ -4,20 +4,20 @@
              xmlns:local="clr-namespace:CCG"
              x:Class="CCG.LoginPage"
              BackgroundColor="#007272">
-    <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+  <ContentPage.Content>
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
-            <Image x:Name="image" Aspect="AspectFill"/>
+      <Image x:Name="image" Aspect="AspectFill"/>
 
-            <Button HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                    BackgroundColor="DarkCyan" 
-                    Image="twitch.png"
-                    Text="   Twitch Login" 
-                    FontSize="Medium"
-                    TextColor="White"
-                    Clicked="Button_Clicked"/>
+      <Button HorizontalOptions="Center"
+              VerticalOptions="Center"
+              BackgroundColor="DarkCyan" 
+              Image="twitch.png"
+              Text="   Twitch Login" 
+              FontSize="Medium"
+              TextColor="White"
+              Clicked="Button_Clicked"/>
 
-        </StackLayout>
-    </ContentPage.Content>
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>
