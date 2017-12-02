@@ -10,7 +10,7 @@ using Android.OS;
 namespace CCG.Droid
 {
   [Activity(Label = "CCG", Icon = "@drawable/icon", Theme = "@style/MainTheme",
-   MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | 
+   MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | 
    ConfigChanges.Orientation)]
   public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
   {
