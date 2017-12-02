@@ -9,12 +9,16 @@ using Xamarin.Forms.Xaml;
 
 namespace CCG
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SocialMediaPage : ContentPage
-	{
-		public SocialMediaPage ()
-		{
-		    InitializeComponent ();
-  		}
+  [XamlCompilation(XamlCompilationOptions.Compile)]
+  public partial class SocialMediaPage : ContentPage
+  {
+    public SocialMediaPage()
+    {
+      InitializeComponent();
     }
+
+    private void New_Funciton(object sender, EventArgs e)
+    {
+    }
+  }
 }

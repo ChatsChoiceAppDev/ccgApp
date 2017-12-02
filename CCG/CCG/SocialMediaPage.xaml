@@ -17,7 +17,8 @@
                 BackgroundColor="DarkCyan" 
                 Image="instagram.png" 
                 Text="Instagram" 
-                TextColor="White"/>
+                TextColor="White"
+                Clicked="New_Funciton"/>
         
     </StackLayout>
 </ContentPage>
