@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="CCG.CCG" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="CCG.Android">
-    <intent-filter>
-      <action android:name="android.intent.action.VIEW"/>
-      <category android:name="android.intent.category.DEFAULT" />
-      <category android:name="android.intent.category.BROWSABLE" />
-      <data android:scheme="chats-choice-gaming" />
-    </intent-filter>
-  </application>
+	<application android:label="CCG.Android" android:icon="@drawable/icon">
+		<intent-filter>
+			<action android:name="android.intent.action.VIEW" />
+			<category android:name="android.intent.category.DEFAULT" />
+			<category android:name="android.intent.category.BROWSABLE" />
+			<data android:scheme="chats-choice-gaming" />
+		</intent-filter>
+	</application>
 </manifest>
