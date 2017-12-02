@@ -2,6 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CCG.TwitchPage">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <WebView x:Name="TwitchChannelView" WidthRequest="1000" HeightRequest="1000"/>
+        </StackLayout>
+    </ContentPage.Content>
+    
     <Label Text="Twitch Stream" 
            TextColor="White"
            VerticalOptions="Center" 

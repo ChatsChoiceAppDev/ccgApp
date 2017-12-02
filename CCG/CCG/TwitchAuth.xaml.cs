@@ -16,7 +16,7 @@ namespace CCG
     public TwitchAuth()
     {
       InitializeComponent();
-      Browser.Source = TwitchWrapper.Instance.GetLoginUri(m_uri);
+      Browser.Source = TwitchWrapper.Instance.GetLoginUri(m_uri, "token+id_token", "user_read+openid");
       Browser.Navigating += Redirect;
     }
 
@@ -24,14 +24,32 @@ namespace CCG
     {
       if (e.Url.IndexOf(m_uri) == 0)
       {
-        //Get the auth code
+        Uri uri = new Uri(e.Url);
+
+        //Get the token and id_token
+        string fragment = uri.Fragment;
+        var values = HttpUtility.ParseQueryString(fragment);
+        string accessToken = values["access_token"];
+
+        GetUserInfo(accessToken);
 
         //Cancel navigation
         e.Cancel = true;
 
+        //Clear navigation page
+        foreach (Page page in Navigation.NavigationStack)
+        {
+          Navigation.RemovePage(page);
+        }
+
         //Go to MainPage
         Navigation.PushModalAsync(new MainPage());
       }
+    }
+
+    private async void GetUserInfo(string accessToken)
+    {
+      TwitchUser user = await TwitchWrapper.Instance.GetUser(accessToken);
     }
   }
 }
