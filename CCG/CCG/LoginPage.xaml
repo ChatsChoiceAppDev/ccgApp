@@ -11,7 +11,7 @@
 
       <Button HorizontalOptions="Center"
               VerticalOptions="Center"
-              BackgroundColor="DarkCyan" 
+              BackgroundColor="#007272" 
               Image="twitchtwo.png"
               Text="  Login using Twitch!" 
               FontSize="14"
