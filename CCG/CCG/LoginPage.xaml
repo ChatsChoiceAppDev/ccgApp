@@ -4,20 +4,40 @@
              xmlns:local="clr-namespace:CCG"
              x:Class="CCG.LoginPage"
              BackgroundColor="#007272">
-  <ContentPage.Content>
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
-      <Image x:Name="image" Aspect="AspectFill"/>
-
-      <Button HorizontalOptions="Center"
+  <Grid>
+  
+    <Button   HorizontalOptions="Center"
               VerticalOptions="Center"
-              BackgroundColor="#007272" 
+              BackgroundColor="#008b8b" 
               Image="twitchtwo.png"
               Text="  Login using Twitch!" 
               FontSize="14"
               TextColor="White"
               Clicked="Button_Clicked"/>
 
-    </StackLayout>
-  </ContentPage.Content>
+    <Grid x:Name="SplashGrid" BackgroundColor="#007272">
+     
+      <Image  x:Name="Logo" 
+              Source="logo" 
+              HorizontalOptions="Center"
+              VerticalOptions="Center">
+
+        <Image.TranslationY>
+      
+          <OnPlatform x:TypeArguments="x:Double">
+
+            <On Platform="iOS">0</On>
+            <On Platform="Android">-12</On>
+         
+          </OnPlatform>
+        
+        </Image.TranslationY>
+      
+      </Image>
+    
+    </Grid>
+ 
+  </Grid>
+  
 </ContentPage>

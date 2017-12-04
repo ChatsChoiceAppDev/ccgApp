@@ -5,6 +5,9 @@
 	<Application.Resources>
 
 		<!-- Application resource dictionary -->
+    <ResourceDictionary>
+      <Color x:Key="Primary">#008b8b</Color>
+    </ResourceDictionary>
 
 	</Application.Resources>
 </Application>

@@ -15,8 +15,18 @@ namespace CCG
     public LoginPage()
     {
       InitializeComponent();
+    }
 
-      image.Source = ImageSource.FromResource("CCG.Images.charmy.png");
+    protected override async void OnAppearing()
+    {
+      base.OnAppearing();
+
+      await Task.Delay(2000);
+
+      await Task.WhenAll(
+        SplashGrid.FadeTo(0, 2000),
+        Logo.ScaleTo(0, 250)
+        );
     }
 
     private async void Button_Clicked(object sender, EventArgs e)
