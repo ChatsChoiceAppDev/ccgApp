@@ -15,7 +15,11 @@ namespace CCG
     public LoginPage()
     {
       InitializeComponent();
+
+      image.Source = ImageSource.FromResource("CCG.Images.ccgtext.png");
+
     }
+
 
     protected override async void OnAppearing()
     {
@@ -33,5 +37,6 @@ namespace CCG
     {
       await Navigation.PushModalAsync(new TwitchAuth());
     }
+
   }
 }
