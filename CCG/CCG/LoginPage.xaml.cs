@@ -28,9 +28,10 @@ namespace CCG
       await Task.Delay(2000);
 
       await Task.WhenAll(
-        SplashGrid.FadeTo(0, 2000),
-        Logo.ScaleTo(0, 250)
+        SplashGrid.FadeTo(0, 500),
+        Logo.ScaleTo(0, 300)
         );
+      SplashGrid.IsVisible = false;
     }
 
     private async void Button_Clicked(object sender, EventArgs e)
