@@ -14,6 +14,8 @@ namespace CCG.Droid
   {
     protected override void OnCreate(Bundle bundle)
     {
+      Splat.Locator.CurrentMutable.Register(CreateTwitchCookieStore, typeof(ICookieStore));
+
       TabLayoutResource = Resource.Layout.Tabbar;
       ToolbarResource = Resource.Layout.Toolbar;
 
@@ -21,6 +23,11 @@ namespace CCG.Droid
 
       global::Xamarin.Forms.Forms.Init(this, bundle);
       LoadApplication(new App());
+    }
+
+    private object CreateTwitchCookieStore()
+    {
+      return new DroidCookieStore("https://www.twitch.tv/");
     }
   }
 }
