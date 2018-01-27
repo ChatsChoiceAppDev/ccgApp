@@ -51,7 +51,7 @@ namespace CCG
       }
     }
 
-    public async Task<bool> CreateUser(int twitchID, string name)
+    public async Task<int> CreateUser(int twitchID, string name)
     {
       User newUser = new User();
       newUser.TwitchID = twitchID;
@@ -64,6 +64,52 @@ namespace CCG
         new StringContent(jsonContent, Encoding.UTF8, "application/json");
 
       var response = await client.PostAsync($"api/user/?user={jsonContent}", null);
+      string idStr = response.Content.ReadAsStringAsync().Result;
+      int id = Util.GetNumbers(idStr);
+
+      return id;
+    }
+
+    /// <summary>
+    /// SubmitSuggestion creates a new suggestion and adds it to the CCG 
+    /// OptionSuggestions data table
+    /// </summary>
+    /// <param name="userID">The ID of the CCG user making this suggestion
+    /// </param>
+    /// <param name="gameName">The name of the game they're suggesting</param>
+    /// <param name="description">The description of the game they're 
+    /// suggesting.</param>
+    /// <returns>Unique ID of the suggestion</returns>
+    public async Task<int> SubmitSuggestion(int userID, string gameName, string description)
+    {
+      Option newOption = new Option();
+      newOption.UserID = userID;
+      newOption.Name = gameName;
+      newOption.Description = description;
+
+      HttpClient client = new HttpClient();
+      client.BaseAddress = new Uri(m_ccgBaseAdress);
+      string jsonContent = JsonConvert.SerializeObject(newOption);
+
+      var response = await client.PostAsync($"api/Suggestion/?option={jsonContent}", null);
+      string idStr = response.Content.ReadAsStringAsync().Result;
+      int id = Util.GetNumbers(idStr);
+
+      return id;
+    }
+
+    public async Task<bool> UpdateSuggestion(int userID, string gameName, string description)
+    {
+      Option newOption = new Option();
+      newOption.UserID = userID;
+      newOption.Name = gameName;
+      newOption.Description = description;
+
+      HttpClient client = new HttpClient();
+      client.BaseAddress = new Uri(m_ccgBaseAdress);
+      string jsonContent = JsonConvert.SerializeObject(newOption);
+
+      var response = await client.PutAsync($"api/Suggestion/?option={jsonContent}", null);
 
       return response.IsSuccessStatusCode;
     }

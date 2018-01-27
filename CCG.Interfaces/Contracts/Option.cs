@@ -14,7 +14,10 @@ namespace CCG.Contracts
     public string Name;
 
     [DataMember]
-    public string ID;
+    public int ID;
+
+    [DataMember]
+    public int UserID;
 
     [DataMember]
     public string Description;

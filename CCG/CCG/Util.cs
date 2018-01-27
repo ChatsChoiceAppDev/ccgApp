@@ -12,5 +12,19 @@ namespace CCG
     {
       public const string RedirectUrl = "http://localhost:11011";
     }
+
+    public static int GetNumbers(string input)
+    {
+      string retVal = "";
+      foreach (char c in input.ToCharArray())
+      {
+        if (c >= 48 && c <= 57)
+        {
+          retVal += c.ToString();
+        }
+      }
+
+      return Convert.ToInt32(retVal);
+    }
   }
 }

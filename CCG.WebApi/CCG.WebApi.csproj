@@ -156,6 +156,7 @@
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PollController.cs" />
+    <Compile Include="Controllers\SuggestionController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">

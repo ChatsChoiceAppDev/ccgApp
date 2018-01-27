@@ -16,7 +16,7 @@ namespace CCG
       if (!TwitchWrapper.Instance.AuthenticateSilently(HandleAuthentication))
       {
         //No login cookie, go to the login page
-        MainPage = new LoginPage();
+        MainPage = new LoginPage(); 
         InitializeComponent();
       }
       else

@@ -116,11 +116,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\donatepage.png" />
-    <EmbeddedResource Include="Images\networkpage.png" />
-    <EmbeddedResource Include="Images\partnerpage.png" />
-    <EmbeddedResource Include="Images\twitchpage.png" />
-    <EmbeddedResource Include="Images\votepage.png" />
+    <EmbeddedResource Include="bin\Images\donatepage.png" />
+    <EmbeddedResource Include="bin\Images\networkpage.png" />
+    <EmbeddedResource Include="bin\Images\partnerpage.png" />
+    <EmbeddedResource Include="bin\Images\twitchpage.png" />
+    <EmbeddedResource Include="bin\Images\votepage.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SocialMediaPage.xaml">
@@ -159,7 +159,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\charmy.png" />
+    <EmbeddedResource Include="bin\Images\charmy.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="TwitchAuth.xaml">
@@ -168,10 +168,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\loginwithtwitch.png" />
+    <EmbeddedResource Include="bin\Images\loginwithtwitch.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\ccgtext.png" />
+    <EmbeddedResource Include="bin\Images\ccgtext.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CCG.Interfaces\CCG.Interfaces.csproj">

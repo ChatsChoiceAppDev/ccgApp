@@ -2,10 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CCG.VotePage">
-  <StackLayout>
-    <Entry Keyboard="Text" Placeholder="Game Suggestion"/>
-    <Entry IsPassword="False" Completed ="Entry_Completed"/>
-    <Label x:Name="label" />
-
-  </StackLayout>
+    <StackLayout>
+        <Entry x:Name="GameName" Keyboard="Text" Placeholder="Game Suggestion"/>
+        <Entry x:Name="Description" IsPassword="False" Completed ="EntryCompleted"/>
+        <Label x:Name="Label" />
+    </StackLayout>
 </ContentPage>

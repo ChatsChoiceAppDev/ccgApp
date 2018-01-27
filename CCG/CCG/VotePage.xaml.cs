@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CCG.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,11 @@ namespace CCG
       InitializeComponent();
     }
 
-    private void Entry_Completed(object sender, EventArgs e) => label.Text = "Submitted";
+    private void EntryCompleted(object sender, EventArgs e)
+    {
+      CCGWrapper wrapper = new CCGWrapper();
+      wrapper.SubmitSuggestion(0, GameName.Text, Description.Text);
+      Label.Text = "Submitted";
+    }
   }
 }

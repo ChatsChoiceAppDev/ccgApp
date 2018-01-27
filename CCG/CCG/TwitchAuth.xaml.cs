@@ -62,7 +62,7 @@ namespace CCG
       User ccgUser = await ccgWrapper.GetUser(user.id, IdType.Twitch);
       if(ccgUser.Name == null)
       {
-        bool result = await ccgWrapper.CreateUser(user.id, user.display_name);
+        int id= await ccgWrapper.CreateUser(user.id, user.display_name);
       }
     }
 

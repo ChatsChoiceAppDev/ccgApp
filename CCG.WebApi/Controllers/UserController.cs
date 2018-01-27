@@ -83,19 +83,25 @@ namespace CCG.WebApi.Controllers
     }
 
     // POST: api/User
-    public void Post(string user)
+    public int Post(string user)
     {
       User newUser = JsonConvert.DeserializeObject<User>(user); 
       using (SqlConnection conn = new SqlConnection(Util.ConnectString))
       {
         conn.Open();
-        SqlCommand cmd = new SqlCommand("INSERT INTO Users (TwitchID, Name, Experience) VALUES (@TwitchID, @Name, @Exp);", conn);
+        SqlCommand cmd = new SqlCommand("INSERT INTO Users (TwitchID, Name, Experience) OUTPUT Inserted.ID VALUES (@TwitchID, @Name, @Exp);", conn);
         cmd.Parameters.AddWithValue("TwitchID", newUser.TwitchID);
         cmd.Parameters.AddWithValue("Name", newUser.Name);
         cmd.Parameters.AddWithValue("Exp", 0);
 
-        cmd.ExecuteNonQuery();
+        SqlDataReader reader = cmd.ExecuteReader();
+        if(reader.Read())
+        {
+          int id = (int)reader[0];
+          return id;
+        }
       }
+      return -1;
     }
 
     // PUT: api/User/5
