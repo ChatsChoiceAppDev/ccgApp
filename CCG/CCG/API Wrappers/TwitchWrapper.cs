@@ -134,7 +134,7 @@ namespace CCG
     public string description { get; set; }
     public string display_name { get; set; }
     public string email { get; set; }
-    public string id { get; set; }
+    public int id { get; set; }
     public string login { get; set; }
     public string offline_image_url { get; set; }
     public string profile_image_url { get; set; }

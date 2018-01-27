@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
+using Android.Webkit;
 using Android.Widget;
 using Android.OS;
 
@@ -18,6 +19,14 @@ namespace CCG.Droid
 
       TabLayoutResource = Resource.Layout.Tabbar;
       ToolbarResource = Resource.Layout.Toolbar;
+
+      SetContentView(Resource.Layout.WebViewSilent);
+
+      WebView silentWebView = FindViewById<WebView>(Resource.Id.WebViewSilent);
+      WebViewClient client = new WebViewClient();
+      silentWebView.SetWebViewClient(new WebViewClient()); // stops request going to Web Browser
+
+      //Splat.Locator.CurrentMutable.Register();
 
       base.OnCreate(bundle);
 

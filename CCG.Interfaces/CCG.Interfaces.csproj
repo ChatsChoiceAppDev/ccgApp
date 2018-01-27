@@ -33,9 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Comment.cs" />
     <Compile Include="ICookieStore.cs" />
     <Compile Include="IWebViewSilent.cs" />
+    <Compile Include="Contracts\Option.cs" />
+    <Compile Include="Contracts\Poll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Contracts\User.cs" />
+    <Compile Include="Contracts\Vote.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

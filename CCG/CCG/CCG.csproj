@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="API Wrappers\CCGWrapper.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -62,7 +63,7 @@
     <Compile Include="TwitchPage.xaml.cs">
       <DependentUpon>TwitchPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TwitchWrapper.cs" />
+    <Compile Include="API Wrappers\TwitchWrapper.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="VotePage.xaml.cs">
       <DependentUpon>VotePage.xaml</DependentUpon>

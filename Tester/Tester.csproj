@@ -69,5 +69,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CCG.Interfaces\CCG.Interfaces.csproj">
+      <Project>{20fb4e59-05b8-4cbb-a873-5a1e4a817362}</Project>
+      <Name>CCG.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

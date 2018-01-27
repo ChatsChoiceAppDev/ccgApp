@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CCG.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -53,8 +54,16 @@ namespace CCG
       TwitchUser user = await TwitchWrapper.Instance.GetUser(accessToken);
       ToolbarItem userButton = new ToolbarItem(user.display_name, "", Logout);
       string name = user.display_name;
+      CCGWrapper ccgWrapper = new CCGWrapper();
+
       ToolbarController.AddToolbarItem(userButton);
       Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+
+      User ccgUser = await ccgWrapper.GetUser(user.id, IdType.Twitch);
+      if(ccgUser.Name == null)
+      {
+        bool result = await ccgWrapper.CreateUser(user.id, user.display_name);
+      }
     }
 
     /// <summary>
@@ -62,7 +71,7 @@ namespace CCG
     /// </summary>
     private void Logout()
     {
-      ICookieStore cookieStore = 
+      ICookieStore cookieStore =
         Splat.Locator.Current.GetService(typeof(ICookieStore)) as ICookieStore;
       cookieStore.DeleteCookie("login");
       ToolbarController.ToolbarPage = null;
