@@ -16,5 +16,7 @@ namespace CCG
     {
       InitializeComponent();
     }
+
+    private void Entry_Completed(object sender, EventArgs e) => label.Text = "Submitted";
   }
 }
