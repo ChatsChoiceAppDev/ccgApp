@@ -12,7 +12,7 @@ namespace CCG
     public MainPage()
     {
       InitializeComponent();
-      ToolbarItems.Add(new ToolbarItem("Poopy", "", ToolbarItemActivated));
+      ToolbarController.ToolbarPage = this;
     }
 
     private void ToolbarItemActivated()

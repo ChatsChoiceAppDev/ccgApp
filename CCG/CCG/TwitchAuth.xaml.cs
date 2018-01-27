@@ -1,6 +1,8 @@
-﻿using System;
+﻿using CCG.Contracts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,17 +14,17 @@ namespace CCG
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class TwitchAuth : ContentPage
   {
-    private string m_uri = "http://localhost:11011";
     public TwitchAuth()
     {
       InitializeComponent();
-      Browser.Source = TwitchWrapper.Instance.GetLoginUri(m_uri, "token+id_token", "user_read+openid");
+      Browser.Source = TwitchWrapper.Instance.GetLoginUri
+        (Util.Constants.RedirectUrl, "token+id_token", "user_read+openid");
       Browser.Navigating += Redirect;
     }
 
     private void Redirect(object sender, WebNavigatingEventArgs e)
     {
-      if (e.Url.IndexOf(m_uri) == 0)
+      if (e.Url.IndexOf(Util.Constants.RedirectUrl) == 0)
       {
         Uri uri = new Uri(e.Url);
 
@@ -31,7 +33,7 @@ namespace CCG
         var values = HttpUtility.ParseQueryString(fragment);
         string accessToken = values["access_token"];
 
-        //GetUserInfo(accessToken);
+        GetUserInfo(accessToken);
 
         //Cancel navigation
         e.Cancel = true;
@@ -43,13 +45,37 @@ namespace CCG
         }
 
         //Go to MainPage
-        Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+        //Navigation.PushModalAsync(new NavigationPage(new MainPage()));
       }
     }
 
     private async void GetUserInfo(string accessToken)
     {
       TwitchUser user = await TwitchWrapper.Instance.GetUser(accessToken);
+      ToolbarItem userButton = new ToolbarItem(user.display_name, "", Logout);
+      string name = user.display_name;
+      CCGWrapper ccgWrapper = new CCGWrapper();
+
+      ToolbarController.AddToolbarItem(userButton);
+      Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+
+      User ccgUser = await ccgWrapper.GetUser(user.id, IdType.Twitch);
+      if(ccgUser.Name == null)
+      {
+        bool result = await ccgWrapper.CreateUser(user.id, user.display_name);
+      }
+    }
+
+    /// <summary>
+    /// Action handler for the logout button
+    /// </summary>
+    private void Logout()
+    {
+      ICookieStore cookieStore =
+        Splat.Locator.Current.GetService(typeof(ICookieStore)) as ICookieStore;
+      cookieStore.DeleteCookie("login");
+      ToolbarController.ToolbarPage = null;
+      Navigation.PushModalAsync(new LoginPage());
     }
   }
 }

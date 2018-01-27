@@ -26,6 +26,7 @@ namespace CCG.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Splat.Resource.String.library_name = global::CCG.Droid.Resource.String.library_name;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::CCG.Droid.Resource.Attribute.actionBarSize;
 		}
 		
@@ -2255,6 +2256,9 @@ namespace CCG.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f07009a
+			public const int WebViewSilent = 2131165338;
+			
 			// aapt resource value: 0x7f07008b
 			public const int action0 = 2131165323;
 			
@@ -2963,6 +2967,9 @@ namespace CCG.Droid
 			// aapt resource value: 0x7f030038
 			public const int Toolbar = 2130903096;
 			
+			// aapt resource value: 0x7f030039
+			public const int WebViewSilent = 2130903097;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -3041,6 +3048,9 @@ namespace CCG.Droid
 			
 			// aapt resource value: 0x7f080025
 			public const int character_counter_pattern = 2131230757;
+			
+			// aapt resource value: 0x7f080026
+			public const int library_name = 2131230758;
 			
 			// aapt resource value: 0x7f080000
 			public const int mr_button_content_description = 2131230720;
