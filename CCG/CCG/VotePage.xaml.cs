@@ -18,11 +18,20 @@ namespace CCG
       InitializeComponent();
     }
 
-    private void EntryCompleted(object sender, EventArgs e)
+    private async void EntryCompleted(object sender, EventArgs e)
     {
       CCGWrapper wrapper = new CCGWrapper();
-      wrapper.SubmitSuggestion(0, GameName.Text, Description.Text);
-      Label.Text = "Submitted";
+      string statusText = "Submitted!";
+      try
+      {
+        await wrapper.SubmitSuggestion(0, GameName.Text, Description.Text);
+      }
+      catch (Exception ex)
+      {
+        //Server unreachable
+        statusText = "Suggestion not submitted, we couldn't reach the CCG servers :(";
+      }
+      Label.Text = statusText;
     }
   }
 }

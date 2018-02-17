@@ -58,8 +58,23 @@ namespace CCG
 
       ToolbarController.AddToolbarItem(userButton);
       Navigation.PushModalAsync(new NavigationPage(new MainPage()));
+      User ccgUser;
+      try
+      {
+        ccgUser = await ccgWrapper.GetUser(user.id, IdType.Twitch);
+      }
+      catch(Exception ex)
+      {
+        //CCG Server most likely not available
+#if DEBUG
+        ccgUser = new User();
+        ccgUser.Name = "LocalDebugger";
+        ccgUser.TwitchID = user.id;
+#else
+        //Warn the user that CCG servers could not be reached
+#endif
+      }
 
-      User ccgUser = await ccgWrapper.GetUser(user.id, IdType.Twitch);
       if(ccgUser.Name == null)
       {
         int id= await ccgWrapper.CreateUser(user.id, user.display_name);

@@ -80,6 +80,8 @@ namespace CCG
     /// <param name="description">The description of the game they're 
     /// suggesting.</param>
     /// <returns>Unique ID of the suggestion</returns>
+    /// <exception cref="WebException">Thrown if the CCG server can't be 
+    /// reached.</exception>
     public async Task<int> SubmitSuggestion(int userID, string gameName, string description)
     {
       Option newOption = new Option();
@@ -92,10 +94,17 @@ namespace CCG
       string jsonContent = JsonConvert.SerializeObject(newOption);
 
       var response = await client.PostAsync($"api/Suggestion/?option={jsonContent}", null);
-      string idStr = response.Content.ReadAsStringAsync().Result;
-      int id = Util.GetNumbers(idStr);
-
-      return id;
+      if (response.IsSuccessStatusCode)
+      {
+        string idStr = response.Content.ReadAsStringAsync().Result;
+        int id = Util.GetNumbers(idStr);
+        return id;
+      }
+      else
+      {
+        throw (new WebException(response.ReasonPhrase));
+      }
+      
     }
 
     public async Task<bool> UpdateSuggestion(int userID, string gameName, string description)
