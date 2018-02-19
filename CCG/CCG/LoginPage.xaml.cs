@@ -15,9 +15,7 @@ namespace CCG
     public LoginPage()
     {
       InitializeComponent();
-
       image.Source = ImageSource.FromResource("CCG.Images.ccgtext.png");
-
     }
 
 
