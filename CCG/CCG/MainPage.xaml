@@ -6,14 +6,14 @@
              x:Class="CCG.MainPage">
 
 
-    <local:TwitchPage Icon="twitch.png" Appearing="TwitchPage_Appearing" BackgroundColor="#ffffff" />
+    <local:TwitchPage Icon="twitch.png" BackgroundColor="#199da2" Appearing="TwitchPage_Appearing"/>
 
     <local:VotePage Icon="check.png" BackgroundColor="#ffffff" />
 
-    <local:GivePage Icon="money.png" BackgroundColor="#ffffff" />
+    <local:GivePage Icon="money.png" BackgroundColor="#199da2" />
 
-    <local:PartnerPage Icon="partner.png" BackgroundColor="#ffffff" />
+    <local:PartnerPage Icon="partner.png" BackgroundColor="#199da2" />
 
-    <local:SocialMediaPage Icon="online.png" BackgroundColor="#ffffff" />
+    <local:SocialMediaPage Icon="online.png" BackgroundColor="#199da2" />
 
 </TabbedPage>

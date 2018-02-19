@@ -19,6 +19,11 @@ namespace CCG
       InitializeComponent();
       Browser.Source = TwitchWrapper.Instance.GetLoginUri
         (Util.Constants.RedirectUrl, "token+id_token", "user_read+openid");
+      //string width = "854";
+      //string height = "480";
+      //string channel = "chatschoicegaming";
+      //string html = ResourceLoader.GetEmbeddedResourceString("TwitchStream.html");
+      //Browser.Source = html;
       Browser.Navigating += Redirect;
     }
 
