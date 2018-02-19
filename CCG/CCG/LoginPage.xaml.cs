@@ -16,7 +16,7 @@ namespace CCG
     {
       InitializeComponent();
 
-      image.Source = ImageSource.FromResource("CCG.Images.ccgtext.png");
+      image.Source = ImageSource.FromResource("CCG.bin.Images.ccgtext.png");
 
     }
 

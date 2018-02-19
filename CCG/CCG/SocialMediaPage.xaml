@@ -5,20 +5,31 @@
 
     <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
 
-        <Button HorizontalOptions="Center" 
+
+    <Button HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="DarkCyan"
+                Image="discord.png"
+                Text=" Discord"
+                TextColor="White"
+                Clicked="Button_Clicked" />
+
+    <Button HorizontalOptions="Center" 
                 VerticalOptions="Center" 
                 BackgroundColor="DarkCyan" 
                 Image="twitter.png" 
-                Text="Twitter" 
-                TextColor="White"/>
+                Text=" Twitter" 
+                TextColor="White"
+                Clicked="Button_Clicked_1"/>
 
         <Button HorizontalOptions="Center" 
                 VerticalOptions="Center" 
                 BackgroundColor="DarkCyan" 
                 Image="instagram.png" 
-                Text="Instagram" 
+                Text=" Instagram" 
                 TextColor="White"
-                Clicked="Button_Clicked"/>
+                Clicked="Button_Clicked_2"
+                />
         
     </StackLayout>
 </ContentPage>

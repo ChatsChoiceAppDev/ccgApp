@@ -23,5 +23,10 @@ namespace CCG
     {
 
     }
+
+    private void TwitchPage_Appearing(object sender, EventArgs e)
+    {
+      
+    }
   }
 }
