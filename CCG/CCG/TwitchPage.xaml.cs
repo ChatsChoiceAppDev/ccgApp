@@ -35,5 +35,37 @@ namespace CCG
 
       TwitchChannelView.Source = src;
     }
+
+    public void SetTwitchStreamViewSource(int width, int height, string channel)
+    {
+      string w = width.ToString();
+      string h = height.ToString();
+      string html = ResourceLoader.GetEmbeddedResourceString("TwitchStreamParams.html");
+      string formatted = string.Format(html, w, h, channel);
+      SetTwitchStreamViewSource(formatted);
+    }
+
+    public void SetTwitchStreamViewFitted(string channel)
+    {
+      string w = "854";
+      if (Width > 0)
+      {
+        double width = Width - 8;
+        w = width.ToString();
+      }
+
+      string h = "480";
+      if (Height > 0)
+      {
+        double height = Height - 8;
+        h = height.ToString();
+      }
+      
+      string html = ResourceLoader.GetEmbeddedResourceString("TwitchStreamParams.html");
+      html = html.Replace("%%WIDTH%%", w);
+      html = html.Replace("%%HEIGHT%%", h);
+      html = html.Replace("%%CHANNEL%%", channel);
+      SetTwitchStreamViewSource(html);
+    }
   }
 }

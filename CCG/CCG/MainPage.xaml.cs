@@ -26,12 +26,9 @@ namespace CCG
 
     private void TwitchPage_Appearing(object sender, EventArgs e)
     {
-      string width = "854";
-      string height = "480";
-      string channel = "chatschoicegaming";
-      string html = ResourceLoader.GetEmbeddedResourceString("TwitchStream.html");
       TwitchPage twitchPage = CurrentPage as TwitchPage;
-      twitchPage.SetTwitchStreamViewSource(html);
+      string channel = "chatschoicegaming";
+      twitchPage.SetTwitchStreamViewFitted(channel);
     }
   }
 }

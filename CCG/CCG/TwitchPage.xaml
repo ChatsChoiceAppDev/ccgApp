@@ -4,6 +4,6 @@
              x:Class="CCG.TwitchPage">
     
     
-    <WebView x:Name="TwitchChannelView" WidthRequest="1000" HeightRequest="1000"/>
+    <WebView x:Name="TwitchChannelView" WidthRequest="1000" HeightRequest="1000" Margin="5"/>
 
 </ContentPage>
