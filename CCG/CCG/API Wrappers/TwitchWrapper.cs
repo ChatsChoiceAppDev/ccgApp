@@ -42,6 +42,24 @@ namespace CCG
       return uri;
     }
 
+    public async Task<GameSearchResult> SearchGames(string searchText)
+    {
+      HttpClient client = new HttpClient();
+      client.BaseAddress = new Uri(m_twitchBaseAddress);
+      client.DefaultRequestHeaders.Accept.Add
+        (new MediaTypeWithQualityHeaderValue("application/vnd.twitchtv.v5+json"));
+      client.DefaultRequestHeaders.Add("Client-ID", m_clientID);
+
+      string gameResultsStr = await client.GetStringAsync($"kraken/search/games?query={searchText}");
+      if(!string.IsNullOrEmpty(gameResultsStr))
+      {
+        GameSearchResult result = GameSearchResult.FromJson(gameResultsStr);
+        return result;
+      }
+
+      return null;
+    }
+
     public async Task<TwitchUser> GetUser(string bearer)
     {
       HttpClient client = new HttpClient();

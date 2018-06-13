@@ -36,6 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="API Wrappers\CCGWrapper.cs" />
+    <Compile Include="API Wrappers\GameSearchResult.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -57,6 +58,8 @@
     <Compile Include="SocialMediaPage.xaml.cs">
       <DependentUpon>SocialMediaPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SuggestionPage\GameDetailsStack.cs" />
+    <Compile Include="SuggestionPage\SuggestionPageViewModel.cs" />
     <Compile Include="ToolbarController.cs" />
     <Compile Include="TwitchAuth.xaml.cs">
       <DependentUpon>TwitchAuth.xaml</DependentUpon>
@@ -66,8 +69,8 @@
     </Compile>
     <Compile Include="API Wrappers\TwitchWrapper.cs" />
     <Compile Include="Util.cs" />
-    <Compile Include="VotePage.xaml.cs">
-      <DependentUpon>VotePage.xaml</DependentUpon>
+    <Compile Include="SuggestionPage\SuggestionPage.xaml.cs">
+      <DependentUpon>SuggestionPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +84,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FFImageLoading, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.3.6\lib\portable-win+net45+wp80+win81+wpa81\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.3.6\lib\portable-win+net45+wp80+win81+wpa81\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="ModernHttpClient">
       <HintPath>..\..\modernhttpclient-2.4.2\lib\android\ModernHttpClient.dll</HintPath>
     </Reference>
@@ -136,7 +145,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="VotePage.xaml">
+    <EmbeddedResource Include="SuggestionPage\SuggestionPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

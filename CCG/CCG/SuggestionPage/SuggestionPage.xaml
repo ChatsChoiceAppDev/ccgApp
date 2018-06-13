@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CCG.SuggestionPage"
+             BindingContext="ViewModel">
+    <StackLayout>
+        <Label Text="Search for games to suggest:"/>
+        <SearchBar x:Name="GameSearchBar" SearchCommandParameter="{Binding Text, Source={x:Reference GameSearchBar}}"/>
+        <ListView x:Name="SearchResultsList" ItemSelected="SearchResultsList_ItemSelected" RowHeight="120">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell ImageSource="{Binding Box.Small}" Text="{Binding Name}"/>
+                    <!--<Image Source="http://github.com/apple-touch-icon-180x180.png" WidthRequest="182" HeightRequest="182"/>-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackLayout x:Name="GameDetails" IsVisible="False" HeightRequest="300">
+            <Label x:Name="GameName"/>
+            <Image x:Name="GameBoxArt"/>
+            <Button x:Name="SubmitSuggestion" Text="Submit Suggestion" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+        <!--<Entry x:Name="GameName" Keyboard="Text" Placeholder="Game Suggestion"/>
+        <Entry x:Name="Description" IsPassword="False" Completed ="EntryCompleted"/>
+        <Label x:Name="Label"/>-->
+    </StackLayout>
+</ContentPage>

@@ -28,7 +28,10 @@ namespace CCG
     {
       TwitchPage twitchPage = CurrentPage as TwitchPage;
       string channel = "chatschoicegaming";
-      twitchPage.SetTwitchStreamViewFitted(channel);
+      if (twitchPage != null)
+      {
+        twitchPage.SetTwitchStreamViewFitted(channel);
+      }
     }
   }
 }
